@@ -3,6 +3,7 @@ import axios from 'axios';
 import Launch from './Launch';
 import {Grid,Card,AppBar,Toolbar,Typography} from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
+import FilterLaunches from './FilterLaunches';
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
@@ -23,7 +24,7 @@ const Launches = () => {
   }, []);
 
   return (
-    <div className="App" style={{background: "black"}}>
+    <div className="App" style={{background: "yellow"}}>
       <div style={{marginBottom: '20px'}}>
         <AppBar position="static">
               <Toolbar className={classes.navbar}>
@@ -31,6 +32,7 @@ const Launches = () => {
               </Toolbar>
         </AppBar>
       </div>
+      <FilterLaunches />
       <div className="Grid"  style={{marginLeft: '20px',marginRight: '20px'}}>
         <Grid container spacing={2} justify="flex-start" alignItems="flex-start">
           {launches.map(launch => (
@@ -42,7 +44,7 @@ const Launches = () => {
                       name={launch.mission_name}
                       year={launch.launch_year}
                       image={launch.links.mission_patch}
-                  />
+                  /> 
                 </Card>
               </Grid>
             ))}
