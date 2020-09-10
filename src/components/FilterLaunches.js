@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import { Link } from "react-router-dom";
 import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import {Grid,Card,AppBar,Toolbar,Typography} from '@material-ui/core/';
+import {Grid,Card} from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import Filtered from './Filtered';
 
@@ -58,14 +56,6 @@ const FilterLaunches = () => {
   return (
     <div className="FilterLaunches">
      <main>
-      {/*<div style={{marginBottom: '20px'}}>
-        <AppBar position="static">
-              <Toolbar className={classes.navbar}>
-                  <Typography variant="h3">SpaceX</Typography>
-                  <Button color="inherit"><Link to="/" style={{color: "white"}}>Home</Link></Button>
-              </Toolbar>
-        </AppBar>
-      </div>*/}
       <form onSubmit={getSearch} className="search-form" style={{marginBottom: 35}}>
         <TextField
             id="date1"

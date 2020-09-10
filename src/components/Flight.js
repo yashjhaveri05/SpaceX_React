@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import {Grid,Card,Button,AppBar,Toolbar,Typography,CardContent,CardHeader} from '@material-ui/core/';
+import {Grid,Card,Button,AppBar,Toolbar,Typography,CardContent} from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
