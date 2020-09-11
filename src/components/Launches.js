@@ -33,12 +33,12 @@ const Launches = () => {
         </AppBar>
       </div>
       <FilterLaunches />
-      <div className="Grid"  style={{marginLeft: '20px',marginRight: '20px'}}>
+      <div className="Grid"  style={{marginLeft: '20px',marginRight: '20px'}} >
         <Grid container spacing={2} justify="flex-start" alignItems="flex-start">
           {launches.map(launch => (
-              <Grid item xs={4}>
+              <Grid item xs={4}  key={launch.flight_number}>
                 <Card className="Card">
-                    <Launch 
+                  <Launch 
                       key={launch.flight_number}
                       id={launch.flight_number}
                       name={launch.mission_name}

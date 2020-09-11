@@ -27,15 +27,14 @@ const FilterLaunches = () => {
   const [qutwo, setQutwo] = useState("2017-03-04");
 
   useEffect(() => {
+    const getResflights = async() => {
+      const response = await fetch(`https://api.spacexdata.com/v3/launches/?start=${query}&end=${qutwo}`);
+      const data = await response.json();
+      setResflights(data);
+    }
     getResflights();
   }, [query,qutwo]);
 
-  const getResflights = async() => {
-    const response = await fetch(`https://api.spacexdata.com/v3/launches/?start=${query}&end=${qutwo}`);
-    const data = await response.json();
-    setResflights(data);
-    console.log(data);
-  }
 
   const updateSearch = e => {
     setSearch(e.target.value);

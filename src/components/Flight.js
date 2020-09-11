@@ -47,22 +47,22 @@ export default function Flight() {
         axios.get(`https://api.spacexdata.com/v3/launches/${id}`)
             .then(response => setFlight(response.data))
             .catch(err => console.error(err));
-    }, []);
+    }, [id]);
     useEffect(() => {
         axios.get(`https://api.spacexdata.com/v3/launches/${id}`)
             .then(response => setSite(response.data.launch_site))
             .catch(err => console.error(err));
-    }, []);
+    }, [id]);
     useEffect(() => {
         axios.get(`https://api.spacexdata.com/v3/launches/${id}`)
             .then(response => setLinks(response.data.links))
             .catch(err => console.error(err));
-    }, []);
+    }, [id]);
     useEffect(() => {
         axios.get(`https://api.spacexdata.com/v3/launches/${id}`)
             .then(response => setPayloads(response.data.rocket.second_stage.payloads[0]))
             .catch(err => console.error(err));
-    }, []);
+    }, [id]);
 
     return (
         <div>

@@ -1,5 +1,0 @@
-.then(response =>  console.log(response.data))
-
-<p>{flight.launch_year}</p>
-            <p>{flight.details}</p>
-            <p>{new Date(flight.launch_date_utc).toDateString()}</p>
