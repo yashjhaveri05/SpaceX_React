@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
     image: {
         height: 500,
         marginTop: 10,
-        marginBottom: 10
+        marginBottom: 10,
+        marginLeft: 10,
       },
     img: {
         margin: 'auto',
@@ -33,8 +34,10 @@ const useStyles = makeStyles((theme) => ({
         maxHeight: '100%',
     },
     layout: {
-        marginTop: 50,
+        marginTop: 57,
         marginBottom: 59,
+        marginLeft : 20,
+        marginRight : 20,
     },
   }));
 
@@ -71,7 +74,7 @@ export default function Flight() {
                             container
                             spacing={2}
                     >
-                        <Grid item>
+                        <Grid item classname={classes.layout}>
                             <ButtonBase className={classes.image}>
                                 <img className={classes.img} src={links.mission_patch} alt={flight.mission_name}/>
                             </ButtonBase>
@@ -85,22 +88,22 @@ export default function Flight() {
                                         <Typography variant="h4" gutterBottom>
                                             {new Date(flight.launch_date_utc).toDateString()}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             <strong>Launch Site : </strong>{site.site_name_long ? site.site_name_long : "Data Not Provided"}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             <strong>Details : </strong>{flight.details ? flight.details : "Data Not Provided"}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             <strong>Nationality : </strong>{payloads.nationality ? payloads.nationality : "Data Not Provided"}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             <strong>Orbit : </strong>{payloads.orbit ? payloads.orbit : "Data Not Provided"}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             <strong>Type : </strong>{payloads.payload_type ? payloads.payload_type : "Data Not Provided"}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             <strong>Reused : </strong>{payloads.reused ? "Yes":"No"}
                                         </Typography>
                                     </CardContent>

@@ -22,3 +22,7 @@ code {
   background-size: auto;
   text-align: center;
 }
+
+.Filtered {
+  margin-bottom: 5px solid black;
+}

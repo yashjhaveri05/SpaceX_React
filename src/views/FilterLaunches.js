@@ -4,15 +4,15 @@ import Button from '@material-ui/core/Button';
 import {Grid,Card} from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import Filtered from './Filtered';
+import '../index.css';
 
 const useStyles = makeStyles((theme) => ({
-  navbar: {
-      display: "flex",
-      justifyContent: 'space-between',
-  },
   main: {
       marginTop: 10,
       marginBottom: 10,
+      marginLeft: 50,
+      marginRight: 50,
+      textAlign: "center"
   },
   form: {
     marginBottom: 35,
@@ -23,7 +23,12 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: 200,
-  }
+  },
+  grid: {
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30, 
+  },
 }));
 
 const FilterLaunches = () => {
@@ -89,11 +94,11 @@ const FilterLaunches = () => {
         />
         <Button size="small" variant="contained" color="secondary" type="submit">Search</Button>
       </form>
-      <div className={classes.main}  style={{marginLeft: '20px',marginRight: '20px'}}>
+      <div className={classes.main}>
         <Grid container spacing={2} justify="flex-start" alignItems="flex-start">
           {resflights.map(resflight => (
-              <Grid item xs={4}>
-                <Card className="Card">
+              <Grid item xs={12} sm={12} md={6} key={resflight.flight_number}>
+                <Card className="Launches">
                 <Filtered 
                       key={resflight.flight_number}
                       id={resflight.flight_number}
