@@ -13,7 +13,16 @@ const useStyles = makeStyles((theme) => ({
   main: {
       marginTop: 10,
       marginBottom: 10,
-      borderBottom: "5px solid black",
+  },
+  form: {
+    marginBottom: 35,
+    marginTop: 35,
+    textAlign: "center",
+  },
+  field : {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
   }
 }));
 
@@ -55,12 +64,14 @@ const FilterLaunches = () => {
   return (
     <div className="FilterLaunches">
      <main>
-      <form onSubmit={getSearch} className="search-form" style={{marginBottom: 35}}>
+      <form onSubmit={getSearch} className={classes.form}>
         <TextField
             id="date1"
             type="date"
             defaultValue={search}
             onChange={updateSearch}
+            color="primary"
+            className={classes.field}
             InputLabelProps={{
             shrink: true,
             }}
@@ -70,6 +81,8 @@ const FilterLaunches = () => {
             type="date"
             defaultValue={two}
             onChange={updateTwo}
+            color="primary"
+            className={classes.field}
             InputLabelProps={{
             shrink: true,
             }}

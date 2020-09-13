@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import Launches from './components/Launches';
-import Flight from './components/Flight';
+import Launches from './views/Launches';
+import Flight from './views/Flight';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./index.css";
 
 function App(){
   return (
@@ -14,7 +15,6 @@ function App(){
         </Switch>
       </div>
     </Router>
-
   );
 }
 

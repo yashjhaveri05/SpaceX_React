@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Flight {
+  background-image: url('./assets/bg1.jpg');
+  background-size: cover;
+}
+
+.Launches {
+  background-image: url('./assets/bg8.jpg');
+  background-size: auto;
+  text-align: center;
+}

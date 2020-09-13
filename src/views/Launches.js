@@ -4,11 +4,20 @@ import Launch from './Launch';
 import {Grid,Card,AppBar,Toolbar,Typography} from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import FilterLaunches from './FilterLaunches';
+import "../index.css";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
       display: "flex",
       justifyContent: 'center',
+  },
+  app: {
+    background: "#bbdefb",
+  },
+  grid: {
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30, 
   },
 }));
 
@@ -18,14 +27,14 @@ const Launches = () => {
   const [launches, setLaunches] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.spacexdata.com/v3/launches/?limit=9')
+    axios.get('https://api.spacexdata.com/v3/launches/?limit=10')
         .then(response => setLaunches(response.data))
         .catch(err => console.error(err));
   }, []);
 
   return (
-    <div className="App" style={{background: "yellow"}}>
-      <div style={{marginBottom: '20px'}}>
+    <div className={classes.app}>
+      <div>
         <AppBar position="static">
               <Toolbar className={classes.navbar}>
                   <Typography variant="h3">SpaceX</Typography>
@@ -33,11 +42,11 @@ const Launches = () => {
         </AppBar>
       </div>
       <FilterLaunches />
-      <div className="Grid"  style={{marginLeft: '20px',marginRight: '20px'}} >
+      <div className={classes.grid}>
         <Grid container spacing={2} justify="flex-start" alignItems="flex-start">
           {launches.map(launch => (
-              <Grid item xs={4}  key={launch.flight_number}>
-                <Card className="Card">
+              <Grid item xs={12} sm={12} md={6}  key={launch.flight_number}>
+                <Card className="Launches">
                   <Launch 
                       key={launch.flight_number}
                       id={launch.flight_number}
