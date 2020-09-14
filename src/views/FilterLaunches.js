@@ -18,11 +18,18 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 35,
     marginTop: 35,
     textAlign: "center",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   field : {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 300,
+  },
+  button: {
+    marginTop: 10
   },
   grid: {
     marginLeft: 50,
@@ -70,29 +77,33 @@ const FilterLaunches = () => {
     <div className="FilterLaunches">
      <main>
       <form onSubmit={getSearch} className={classes.form}>
-        <TextField
-            id="date1"
-            type="date"
-            defaultValue={search}
-            onChange={updateSearch}
-            color="primary"
-            className={classes.field}
-            InputLabelProps={{
-            shrink: true,
-            }}
-        />
-        <TextField
-            id="date2"
-            type="date"
-            defaultValue={two}
-            onChange={updateTwo}
-            color="primary"
-            className={classes.field}
-            InputLabelProps={{
-            shrink: true,
-            }}
-        />
-        <Button size="small" variant="contained" color="secondary" type="submit">Search</Button>
+      <Grid container spacing={2} justify="center" alignItems="center">
+          <TextField
+              id="date1"
+              type="date"
+              label="Start Date:"
+              defaultValue={search}
+              onChange={updateSearch}
+              color="primary"
+              className={classes.field}
+              InputLabelProps={{
+              shrink: true,
+              }}
+          />
+          <TextField
+              id="date2"
+              type="date"
+              label="End Date:"
+              defaultValue={two}
+              onChange={updateTwo}
+              color="primary"
+              className={classes.field}
+              InputLabelProps={{
+              shrink: true,
+              }}
+          />
+         <Button size="large" variant="contained" color="secondary" type="submit" className={classes.button}>Search</Button>
+      </Grid>
       </form>
       <div className={classes.main}>
         <Grid container spacing={2} justify="flex-start" alignItems="flex-start">
