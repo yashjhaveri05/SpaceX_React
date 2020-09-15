@@ -32,3 +32,25 @@ code {
   margin-right: 30px;
   width: max-content;
 }
+
+.Flight .Grid .title{
+  font-size: 110px;
+  font-weight: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Flight .Grid .title{
+    font-size: 70px;
+    font-weight: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Flight .Grid .Date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

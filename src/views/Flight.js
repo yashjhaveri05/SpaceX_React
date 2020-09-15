@@ -80,12 +80,12 @@ export default function Flight() {
                             </ButtonBase>
                         </Grid>
                         <Grid item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={0}>
+                            <Grid item xs container direction="column" spacing={0} className="Grid">
                                     <CardContent>
-                                        <Typography variant="h1">
+                                        <Typography variant="p" className="title">
                                             {flight.mission_name}
                                         </Typography>
-                                        <Typography variant="h4" gutterBottom>
+                                        <Typography variant="h4" gutterBottom className="Date">
                                             {new Date(flight.launch_date_utc).toDateString()}
                                         </Typography>
                                         <Typography variant="h5" gutterBottom>
