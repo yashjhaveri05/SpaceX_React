@@ -5,6 +5,7 @@ import {Grid,Card,AppBar,Toolbar,Typography} from '@material-ui/core/';
 import { makeStyles } from '@material-ui/core/styles';
 import FilterLaunches from './FilterLaunches';
 import "../index.css";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
@@ -37,11 +38,11 @@ const Launches = () => {
       <div>
         <AppBar position="static">
               <Toolbar className={classes.navbar}>
-                  <Typography variant="h3">SpaceX</Typography>
+                  <Typography variant="h3"><Link to="/" style={{color: "white"}}>SpaceX</Link></Typography>
               </Toolbar>
         </AppBar>
       </div>
-      <FilterLaunches />
+      <FilterLaunches setFiltered = {async(data) => setLaunches(data)} />
       <div className={classes.grid}>
         <Grid container spacing={2} justify="flex-start" alignItems="flex-start">
           {launches.map(launch => (
